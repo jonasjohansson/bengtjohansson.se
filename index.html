@@ -1,223 +1,412 @@
 <!DOCTYPE html>
 <html lang="sv" prefix="og: http://ogp.me/ns#">
-  <head>
-    <title>Bengt Johansson</title>
-    <meta charset="UTF-8" />
-    <meta property="og:title" content="Bengt Johansson" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://bengtjohansson.se" />
-    <meta property="og:image" content="http://bengtjohansson.se/images/malningar/bengt_johansson_-_gungan.jpg" />
-    <meta
-      name="description"
-      property="og:description"
-      content="Bengt Johansson är målare, tecknare, grafiker och skulptör utbildad vid Valands konsthögskola med bostad samt ateljé i Långaveka, Falkenberg"
-    />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="https://jonasjohansson.github.io/template/template.css" />
-    <script src="https://jonasjohansson.github.io/template/template.js"></script>
-  </head>
-  <body>
-    <div id="intro">
-      <h1
-        ><a href="mailto:bjkonst@gmail.com">Bengt<br />Johansson</a></h1
-      >
-      <p
-        >Målare, tecknare, grafiker och skulptör utbildad vid Valands konsthögskola. Har bostad samt ateljé i Långaveka,
-        Falkenberg.</p
-      >
-      <p data-no-print
-        >För ateljébesök, utställningar och utsmyckningsuppdrag
-        <a href="mailto:kontakt@bengtjohansson.se">skriv gärna ett mail</a> eller
-        <a href="tel:0703226257">ring</a
-        >.<!--  Följ mig på <a href="https://www.instagram.com/konstnarbengtjohansson/">Instagram</a> för bilder från konsten i min vardag. --></p
-      >
-    </div>
-    <div id="work">
-      <section>
-        <h2>Utsmyckningar</h2>
-        <div>
-          <figure><img src="images/utsmyckningar/bengt_johansson_-_stegen.jpg" alt="" /></figure>
-          <figure><img src="images/utsmyckningar/bengt_johansson_-_lek_med_drake.jpg" alt="" /></figure>
+    <head>
+        <title>Bengt Johansson</title>
+        <meta charset="UTF-8" />
+        <meta property="og:title" content="Bengt Johansson" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://bengtjohansson.se" />
+        <meta property="og:image" content="http://bengtjohansson.se/images/malningar/bengt_johansson_-_gungan.jpg" />
+        <meta
+            name="description"
+            property="og:description"
+            content="Bengt Johansson är målare, tecknare, grafiker och skulptör utbildad vid Valands konsthögskola med bostad samt ateljé i Långaveka, Falkenberg"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://jonasjohansson.github.io/template/template.css" />
+        <script>
+            document.addEventListener('DOMContentLoaded', init)
+
+            function init() {
+                for (let fig of document.querySelectorAll('figure')) {
+                    let image = fig.querySelector('img')
+                    let title = getTitle(image.src).trim()
+                    if (image.alt.length !== 0) continue
+                    image.alt = title
+                    image.title = title
+                    let figCaption = document.createElement('figcaption')
+                    figCaption.innerHTML = title
+                    fig.appendChild(figCaption)
+                }
+                for (let a of document.querySelectorAll('p a')) {
+                    a.target = '_blank'
+                }
+            }
+
+            function getTitle(string) {
+                let ext = string.split('.').pop()
+                let path = string.substring(string.indexOf('-') + 1)
+                let title = path.slice(0, -ext.length - 1)
+                title = title.replace(/_/g, ' ')
+                return decodeURI(title)
+            }
+        </script>
+    </head>
+    <body>
+        <div id="intro">
+            <h1>
+                <a href="mailto:bjkonst@gmail.com">
+                    Bengt
+                    <br />
+                    Johansson
+                </a>
+            </h1>
+            <p>
+                Målare, tecknare, grafiker och skulptör utbildad vid Valands konsthögskola. Har bostad samt ateljé i
+                Långaveka, Falkenberg.
+            </p>
+            <p data-no-print>
+                För ateljébesök, utställningar och utsmyckningsuppdrag
+                <a href="mailto:kontakt@bengtjohansson.se">skriv gärna ett mail</a>
+                <!--  Följ mig på <a href="https://www.instagram.com/konstnarbengtjohansson/">Instagram</a> för bilder från konsten i min vardag. -->
+            </p>
         </div>
-      </section>
-      <section>
-        <h2>Målningar</h2>
-        <div>
-          <figure><img src="images/malningar/bengt_johansson_-_vilan.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_kattegatt_i.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_kattegatt_ii.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_efter_regn.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_regnmoln.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_motljus.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_bottnafjorden.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_gullbringa_i.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_gullbringa_ii.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_gunilla.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_självporträtt.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_campingset.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_landskap_halland.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_blomsterrum.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_snösvängen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_rummet.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_köket.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_föl.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_tupp_och_hönor.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_saker_på_bordet_i.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_saker_på_bordet_ii.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_syltburkar.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_från_växthuset.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_gungan.jpg" alt="" /></figure>
-          <!-- <figure><img src="images/malningar/bengt_johansson_-_farmor.jpg" alt=""></figure> -->
-          <figure><img src="images/malningar/bengt_johansson_-_trädgården.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_blomsterlandet.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_vattenkranen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_julblomma.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_i_vår_herres_hage.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_dansösen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_morgontoalett.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_husbåten.jpg" alt="" /></figure>
-          <!-- <figure><img src="images/malningar/bengt_johansson_-_från_köket_i.jpg" alt=""></figure> -->
-          <figure><img src="images/malningar/bengt_johansson_-_från_köket_ii.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_bryggan.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_landskap_bovallstrand.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_sommarberg_i.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_sommarberg_ii.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_sommarberg_iii.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_sommar.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_ensam_och_vilsen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_vårträd.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_återträffen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_vårskogen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_från_ateljén.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_födelsedagen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_ensam_och_vilsen.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_bryggan.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_beduiner.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_klubblaget_i.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_klubblaget_ii.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_sylvia.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_parafras_på_honoré_daumier.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_i_köket.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_hus_och_trädgård.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_från_altan.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_kor.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_barnporträtt.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_förlåt.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_lacoste.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_musikanterna_med_ferlin.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_självporträtt_i_ateljén.jpg" alt="" /></figure>
-          <figure><img src="images/malningar/bengt_johansson_-_vårvinden.jpg" alt="" /></figure>
-        </div>
-      </section>
-      <!-- <section>
+        <div id="work">
+            <section>
+                <h2>Utsmyckningar</h2>
+                <div>
+                    <figure>
+                        <img src="images/utsmyckningar/bengt_johansson_-_stegen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/utsmyckningar/bengt_johansson_-_lek_med_drake.jpg" loading="lazy" />
+                    </figure>
+                </div>
+            </section>
+            <section>
+                <h2>Målningar</h2>
+                <div>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_vilan.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_kattegatt_i.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_kattegatt_ii.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_efter_regn.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_regnmoln.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_motljus.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_bottnafjorden.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_gullbringa_i.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_gullbringa_ii.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_gunilla.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_självporträtt.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_campingset.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_landskap_halland.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_blomsterrum.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_snösvängen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_rummet.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_köket.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_föl.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_tupp_och_hönor.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_saker_på_bordet_i.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_saker_på_bordet_ii.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_syltburkar.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_från_växthuset.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_gungan.jpg" loading="lazy" />
+                    </figure>
+                    <!-- <figure>
+                      <img src="images/malningar/bengt_johansson_-_farmor.jpg" loading="lazy"></figure> -->
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_trädgården.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_blomsterlandet.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_vattenkranen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_julblomma.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_i_vår_herres_hage.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_dansösen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_morgontoalett.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_husbåten.jpg" loading="lazy" />
+                    </figure>
+                    <!-- <figure>
+                      <img src="images/malningar/bengt_johansson_-_från_köket_i.jpg" loading="lazy"></figure> -->
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_från_köket_ii.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_bryggan.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_landskap_bovallstrand.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_sommarberg_i.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_sommarberg_ii.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_sommarberg_iii.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_sommar.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_ensam_och_vilsen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_vårträd.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_återträffen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_vårskogen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_från_ateljén.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_födelsedagen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_ensam_och_vilsen.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_bryggan.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_beduiner.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_klubblaget_i.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_klubblaget_ii.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_sylvia.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img
+                            src="images/malningar/bengt_johansson_-_parafras_på_honoré_daumier.jpg"
+                            alt=""
+                            loading="lazy"
+                        />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_i_köket.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_hus_och_trädgård.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_från_altan.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_kor.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_barnporträtt.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_förlåt.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_lacoste.jpg" loading="lazy" />
+                    </figure>
+                    <figure>
+                        <img
+                            src="images/malningar/bengt_johansson_-_musikanterna_med_ferlin.jpg"
+                            alt=""
+                            loading="lazy"
+                        />
+                    </figure>
+                    <figure>
+                        <img
+                            src="images/malningar/bengt_johansson_-_självporträtt_i_ateljén.jpg"
+                            alt=""
+                            loading="lazy"
+                        />
+                    </figure>
+                    <figure>
+                        <img src="images/malningar/bengt_johansson_-_vårvinden.jpg" loading="lazy" />
+                    </figure>
+                </div>
+            </section>
+            <!-- <section>
 			<h2>Grafik</h2>
 			<div>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_01.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_02.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_04.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_05.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_06.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_07.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_08.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_09.jpg" alt=""></figure>
-				<figure><img src="images/grafik/bengt_johansson_-_grafik_10.jpg" alt=""></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_01.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_02.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_04.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_05.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_06.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_07.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_08.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_09.jpg" loading="lazy"></figure>
+				<figure>
+          <img src="images/grafik/bengt_johansson_-_grafik_10.jpg" loading="lazy"></figure>
 			</div>
 		</section> -->
-    </div>
-    <div id="resume">
-      <section>
-        <h3>Utbildning</h3>
-        <div data-date-start="1970" data-date-end="1975">Valands konsthögskola</div>
-        <div data-date-start="1968" data-date-end="1970">Septemberakademin, Gerlesborgsskolan, Bohuslän</div>
-      </section>
-      <section>
-        <h3>Samlingsutställningar</h3>
-        <div data-date-start="2018.04.28"
-          ><a href="https://www.facebook.com/galleri.majnabbe/">Galleri Majnabbe, Göteborg</a></div
-        >
-        <div data-date-start="2018.01.20"
-          ><a href="https://www.facebook.com/events/136561130361741/">Speglingar, Kungsbacka kulturhus</a></div
-        >
-        <div data-date-start="2017">Speglingar, Varbergs Fästning</div>
-      </section>
-      <section>
-        <h3>Separatutställningar</h3>
-        <div data-date-start="2018">Varbergs konstklubb</div>
-        <div data-date-start="2017">Galleri Anna H, Göteborg</div>
-        <div data-date-start="2015">Kungsbacka kulturhus, Kungsbacka</div>
-        <div data-date-start="2014">Galleri Majnabbe, Göteborg</div>
-        <div data-date-start="2014">Ålgårdens konstkollektiv, Borås</div>
-        <div data-date-start="2012">Konsthallen Hamnmagasinet, Varberg</div>
-        <div data-date-start="2012">Hallands Konstförening, Halmstad</div>
-        <div data-date-start="2011">Dalslands Konstmuseum</div>
-        <div data-date-start="2010">Mimers Hus Konsthallen, Kungälv kommun</div>
-        <div data-date-start="2010">Konstnärernas Kollektivverkstad Bohuslän</div>
-        <div data-date-start="2007">Falkenbergs Museum</div>
-        <div data-date-start="2006, 2000, 1996, 1989, 1987, 1980">Galerie Holm, Malmö</div>
-        <div data-date-start="2006, 2005">Kulturnatta, Vänersborgs kommun</div>
-        <div data-date-start="2004">Stadsgalleriet, Halmstad</div>
-        <div data-date-start="2004, 1998">Galleri Aveny, Göteborg</div>
-        <div data-date-start="2002">Nordens Bilder, Kungälv</div>
-        <div data-date-start="2002">Vänersborgs konsthall</div>
-        <div data-date-start="2001, 1992">Varbergs konsthall</div>
-        <div data-date-start="1998">Flamënska Galleriet, Borås</div>
-        <div data-date-start="1998, 1994, 1990, 1982">Färg och Form, Stockholm</div>
-        <div data-date-start="1997">Trollhättans konsthall</div>
-        <div data-date-start="1995">Konstepidemin, Göteborg</div>
-        <div data-date-start="1995">Ateljéutställning i Grez-sur-Loing</div>
-        <div data-date-start="1992, 1989, 1985">Galleri Garmer, Göteborg</div>
-      </section>
-      <section>
-        <h3>Konstnärlig utsmyckning i urval</h3>
-        <div data-date-start="2011">Knopp, blomma och blad, skulpturgrupp i marmor Varbergs Sjukhus</div>
-        <div data-date-start="2004">Falkenbergs Bostadsaktiebolag (skulpturfontän i marmor)</div>
-        <div data-date-start="1995">Falkenbergs Bostadsaktiebolag (24 målningar i trapphus)</div>
-        <div data-date-start="1993">Stadsarkivet i Göteborg (glasutsmyckningar och textil)</div>
-        <div data-date-start="1987" data-date-end="1988"
-          >Sparbanken i Vänersborg (väggmålning 9x12 m, skulpturfontän m.m.)</div
-        >
-        <div data-date-start="1985">Mölndals nya sjukhus (väggmålningar)</div>
-        <div data-date-start="1982">Osby nya servicehus och bibliotek 1982 (målningar)</div>
-        <div data-date-start="1971" data-date-end="1972">Vänersborgs kommunhus (väggmålning 7x9 m, skulpturer mm)</div>
-      </section>
-      <section>
-        <h3>Representerad bl.a.</h3>
-        <div>Göteborgs konstmuseum</div>
-        <div>Hallands konstmusem, Halmstad</div>
-        <div>Statens konstråd</div>
-        <div>Skövde konstmuseum</div>
-        <div>Laholms teckningsmuseum</div>
-        <div>Falkenbergs Museum</div>
-        <div>Göteborgs Universitet</div>
-        <div>Stockholm Stad</div>
-        <div>Nya Högskolan, Vänersborg</div>
-        <div>Laholms kommun</div>
-        <div>Tingsrätten i Göteborg</div>
-        <div>Hallands läns landsting, Göteborgs och Bohusläns landsting m.fl.</div>
-        <div>Sveriges allmänna konstförening, Göteborgs konstförening, sällskapet Spiran m.fl.</div>
-        <div>Vänersborgs kommun, Borås kommun, Kungälvs kommun m.fl.</div>
-        <div>Region Halland, Västra Götalandsregionen</div>
-      </section>
-      <section>
-        <h3>Stipendier</h3>
-        <div data-date-start="2010">Olle Skagerfors stipendium tilldelat av Eric Ericsson stiftelse</div>
-        <div data-date-start="2006">Adlerbertska kulturstipendium tilldelat av Sällskapet Gnistan i Göteborg</div>
-        <div data-date-start="1988-89, 1991-92, 1997-98, 2003-04">Bildkonstnärsfondens arbetsstipendium åren</div>
-        <div data-date-start="1998">Göteborgs stads kulturstipendium</div>
-        <div data-date-start="1976, 1995">Göteborgs stads utställningsstipendium</div>
-        <div data-date-start="1994">Grez-sur-Loing, 3 mån ateljévistelse, Göteborgs kulturnämnd</div>
-        <div data-date-start="1976">Eric Ericssons stiftelse, Göteborg</div>
-        <div data-date-start="1968, 1969">Gustaf B Thordéns stiftelse, Uddevalla</div>
-      </section>
-      <section>
-        <h3>Publicerad</h3>
-        <div data-date-start="2010"
-          ><a href="http://www.hn.se/n%C3%B6je/rid%C3%A5n-g%C3%A5r-ner-p%C3%A5-boudoir-intim-1.3364091"
-            >"Ridån går ner på Boudoir Intim"</a
-          ></div
-        >
-      </section>
-      <p>Medlem i <a href="http://www.kro.se/">KRO</a></p>
-    </div>
-  </body>
+        </div>
+        <div id="resume">
+            <section>
+                <h3>Utbildning</h3>
+                <div data-date-start="1970" data-date-end="1975">Valands konsthögskola</div>
+                <div data-date-start="1968" data-date-end="1970">Septemberakademin, Gerlesborgsskolan, Bohuslän</div>
+            </section>
+            <section>
+                <h3>Samlingsutställningar</h3>
+                <div data-date-start="2018.04.28">
+                    <a href="https://www.facebook.com/galleri.majnabbe/">Galleri Majnabbe, Göteborg</a>
+                </div>
+                <div data-date-start="2018.01.20">
+                    <a href="https://www.facebook.com/events/136561130361741/">Speglingar, Kungsbacka kulturhus</a>
+                </div>
+                <div data-date-start="2017">Speglingar, Varbergs Fästning</div>
+            </section>
+            <section>
+                <h3>Separatutställningar</h3>
+                <div data-date-start="2018">Varbergs konstklubb</div>
+                <div data-date-start="2017">Galleri Anna H, Göteborg</div>
+                <div data-date-start="2015">Kungsbacka kulturhus, Kungsbacka</div>
+                <div data-date-start="2014">Galleri Majnabbe, Göteborg</div>
+                <div data-date-start="2014">Ålgårdens konstkollektiv, Borås</div>
+                <div data-date-start="2012">Konsthallen Hamnmagasinet, Varberg</div>
+                <div data-date-start="2012">Hallands Konstförening, Halmstad</div>
+                <div data-date-start="2011">Dalslands Konstmuseum</div>
+                <div data-date-start="2010">Mimers Hus Konsthallen, Kungälv kommun</div>
+                <div data-date-start="2010">Konstnärernas Kollektivverkstad Bohuslän</div>
+                <div data-date-start="2007">Falkenbergs Museum</div>
+                <div data-date-start="2006, 2000, 1996, 1989, 1987, 1980">Galerie Holm, Malmö</div>
+                <div data-date-start="2006, 2005">Kulturnatta, Vänersborgs kommun</div>
+                <div data-date-start="2004">Stadsgalleriet, Halmstad</div>
+                <div data-date-start="2004, 1998">Galleri Aveny, Göteborg</div>
+                <div data-date-start="2002">Nordens Bilder, Kungälv</div>
+                <div data-date-start="2002">Vänersborgs konsthall</div>
+                <div data-date-start="2001, 1992">Varbergs konsthall</div>
+                <div data-date-start="1998">Flamënska Galleriet, Borås</div>
+                <div data-date-start="1998, 1994, 1990, 1982">Färg och Form, Stockholm</div>
+                <div data-date-start="1997">Trollhättans konsthall</div>
+                <div data-date-start="1995">Konstepidemin, Göteborg</div>
+                <div data-date-start="1995">Ateljéutställning i Grez-sur-Loing</div>
+                <div data-date-start="1992, 1989, 1985">Galleri Garmer, Göteborg</div>
+            </section>
+            <section>
+                <h3>Konstnärlig utsmyckning i urval</h3>
+                <div data-date-start="2011">Knopp, blomma och blad, skulpturgrupp i marmor Varbergs Sjukhus</div>
+                <div data-date-start="2004">Falkenbergs Bostadsaktiebolag (skulpturfontän i marmor)</div>
+                <div data-date-start="1995">Falkenbergs Bostadsaktiebolag (24 målningar i trapphus)</div>
+                <div data-date-start="1993">Stadsarkivet i Göteborg (glasutsmyckningar och textil)</div>
+                <div data-date-start="1987" data-date-end="1988">
+                    Sparbanken i Vänersborg (väggmålning 9x12 m, skulpturfontän m.m.)
+                </div>
+                <div data-date-start="1985">Mölndals nya sjukhus (väggmålningar)</div>
+                <div data-date-start="1982">Osby nya servicehus och bibliotek 1982 (målningar)</div>
+                <div data-date-start="1971" data-date-end="1972">
+                    Vänersborgs kommunhus (väggmålning 7x9 m, skulpturer mm)
+                </div>
+            </section>
+            <section>
+                <h3>Representerad bl.a.</h3>
+                <div>Göteborgs konstmuseum</div>
+                <div>Hallands konstmusem, Halmstad</div>
+                <div>Statens konstråd</div>
+                <div>Skövde konstmuseum</div>
+                <div>Laholms teckningsmuseum</div>
+                <div>Falkenbergs Museum</div>
+                <div>Göteborgs Universitet</div>
+                <div>Stockholm Stad</div>
+                <div>Nya Högskolan, Vänersborg</div>
+                <div>Laholms kommun</div>
+                <div>Tingsrätten i Göteborg</div>
+                <div>Hallands läns landsting, Göteborgs och Bohusläns landsting m.fl.</div>
+                <div>Sveriges allmänna konstförening, Göteborgs konstförening, sällskapet Spiran m.fl.</div>
+                <div>Vänersborgs kommun, Borås kommun, Kungälvs kommun m.fl.</div>
+                <div>Region Halland, Västra Götalandsregionen</div>
+            </section>
+            <section>
+                <h3>Stipendier</h3>
+                <div data-date-start="2010">Olle Skagerfors stipendium tilldelat av Eric Ericsson stiftelse</div>
+                <div data-date-start="2006">
+                    Adlerbertska kulturstipendium tilldelat av Sällskapet Gnistan i Göteborg
+                </div>
+                <div data-date-start="1988-89, 1991-92, 1997-98, 2003-04">
+                    Bildkonstnärsfondens arbetsstipendium åren
+                </div>
+                <div data-date-start="1998">Göteborgs stads kulturstipendium</div>
+                <div data-date-start="1976, 1995">Göteborgs stads utställningsstipendium</div>
+                <div data-date-start="1994">Grez-sur-Loing, 3 mån ateljévistelse, Göteborgs kulturnämnd</div>
+                <div data-date-start="1976">Eric Ericssons stiftelse, Göteborg</div>
+                <div data-date-start="1968, 1969">Gustaf B Thordéns stiftelse, Uddevalla</div>
+            </section>
+            <section>
+                <h3>Publicerad</h3>
+                <div data-date-start="2010">
+                    <a href="http://www.hn.se/n%C3%B6je/rid%C3%A5n-g%C3%A5r-ner-p%C3%A5-boudoir-intim-1.3364091">
+                        "Ridån går ner på Boudoir Intim"
+                    </a>
+                </div>
+            </section>
+            <p>
+                Medlem i
+                <a href="http://www.kro.se/">KRO</a>
+            </p>
+        </div>
+    </body>
 </html>
