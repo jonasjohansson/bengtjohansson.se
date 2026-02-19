@@ -34,7 +34,12 @@ a:hover {
 	max-height: 100vh;
 	overflow-y: auto;
 	scrollbar-width: none;
+	-ms-overflow-style: none;
 	padding: 20px;
+}
+
+#sidebar::-webkit-scrollbar {
+	display: none;
 }
 
 #intro h1 {
