@@ -82,10 +82,13 @@ a:hover {
 #work figure a {
 	display: block;
 	overflow: hidden;
+	aspect-ratio: 4/3;
 }
 
 #work figure img {
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	display: block;
 }
 
