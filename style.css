@@ -12,7 +12,8 @@ body {
 	background: #fff;
 	display: grid;
 	grid-template-columns: 1fr 500px;
-	grid-template-areas: "work sidebar";
+	grid-template-areas: "work-heading ." "work sidebar";
+	grid-template-rows: auto 1fr;
 	min-height: 100vh;
 }
 
@@ -42,18 +43,21 @@ a:hover {
 	display: none;
 }
 
-#intro h1 {
-	font-size: 1.4em;
-	font-weight: normal;
-	margin-bottom: 1em;
-}
-
-#intro h1 a {
-	text-decoration: none;
-}
-
 #intro p {
 	margin-bottom: 1em;
+}
+
+/* Work heading (desktop only) */
+
+#work-heading {
+	grid-area: work-heading;
+	padding: 20px 20px 0;
+	font-size: 1.8em;
+	font-weight: normal;
+}
+
+#work-heading a {
+	text-decoration: none;
 }
 
 /* Work / Gallery */
@@ -133,7 +137,12 @@ a:hover {
 @media (max-width: 768px) {
 	body {
 		grid-template-columns: 1fr;
-		grid-template-areas: "sidebar" "work";
+		grid-template-areas: "work-heading" "sidebar" "work";
+		grid-template-rows: auto;
+	}
+
+	#work-heading {
+		padding: 40px 20px 0;
 	}
 
 	#sidebar {
